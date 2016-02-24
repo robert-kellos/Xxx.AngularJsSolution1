@@ -1,0 +1,170 @@
+﻿[
+  {
+    "CompanyName": "Acme Widget, Inc.",
+    "Addresses": [
+      {
+        "AddressBlockLine": null,
+        "City": "AnyTown",
+        "CountryCode": "USA",
+        "PostalCode": "11111-2222",
+        "RegionCode": "NY",
+        "Street1": "15 Oak St. Suite 1300",
+        "Street2": null,
+        "Street3": null,
+        "AddressRole": "Business"
+      }
+    ],
+    "Contacts": [
+      {
+        "PersonPrefix": "Mr.",
+        "PersonFirstName": "Robert",
+        "PersonMiddleInitial": null,
+        "PersonLastName": "Washington",
+        "PersonSuffix": null,
+        "PersonTitle": "VP MArketing",
+        "Email": [
+          "acustomer@example.com"
+        ],
+        "Phone": [
+          {
+            "CountryAccessCode": "1",
+            "AreaCityCode": "212",
+            "PhoneNumber": "5551212",
+            "PhoneExtension": null,
+            "phoneLocation": "Office",
+            "phoneType": "Voice"
+          }
+        ],
+        "SourceCode": [
+          {
+            "source": "Agency",
+            "sourceDescription": null,
+            "Value": "AGY_CON_001"
+          }
+        ],
+        "ContactId": "PS0",
+        "ContactRole": "Buyer"
+      }
+    ],
+    "SourceCodes": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "ADV_001"
+      }
+    ],
+    "DUNSNumber": 101010101
+  },
+  {
+    "CompanyName": "20th Century Fox, Inc.",
+    "Addresses": [
+      {
+        "AddressBlockLine": null,
+        "City": "AnyTown",
+        "CountryCode": "USA",
+        "PostalCode": "11111-2222",
+        "RegionCode": "NY",
+        "Street1": "15 Oak St. Suite 1300",
+        "Street2": null,
+        "Street3": null,
+        "AddressRole": "Business"
+      }
+    ],
+    "Contacts": [
+      {
+        "PersonPrefix": "Mr.",
+        "PersonFirstName": "Robert",
+        "PersonMiddleInitial": null,
+        "PersonLastName": "Washington",
+        "PersonSuffix": null,
+        "PersonTitle": "VP MArketing",
+        "Email": [
+          "acustomer@example.com"
+        ],
+        "Phone": [
+          {
+            "CountryAccessCode": "1",
+            "AreaCityCode": "212",
+            "PhoneNumber": "5551212",
+            "PhoneExtension": null,
+            "phoneLocation": "Office",
+            "phoneType": "Voice"
+          }
+        ],
+        "SourceCode": [
+          {
+            "source": "Agency",
+            "sourceDescription": null,
+            "Value": "AGY_CON_001"
+          }
+        ],
+        "ContactId": "PS0",
+        "ContactRole": "Buyer"
+      }
+    ],
+    "SourceCodes": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "ADV_001"
+      }
+    ],
+    "DUNSNumber": 101010101
+  },
+  {
+    "CompanyName": "Fox n Things, Inc.",
+    "Addresses": [
+      {
+        "AddressBlockLine": null,
+        "City": "Norwalk",
+        "CountryCode": "USA",
+        "PostalCode": "06606-0000",
+        "RegionCode": "CT",
+        "Street1": "190 Marlin Avenue",
+        "Street2": null,
+        "Street3": null,
+        "AddressRole": "Business"
+      }
+    ],
+    "Contacts": [
+      {
+        "PersonPrefix": "Mr.",
+        "PersonFirstName": "Robert",
+        "PersonMiddleInitial": null,
+        "PersonLastName": "Washington",
+        "PersonSuffix": null,
+        "PersonTitle": "VP MArketing",
+        "Email": [
+          "acustomer@example.com"
+        ],
+        "Phone": [
+          {
+            "CountryAccessCode": "1",
+            "AreaCityCode": "212",
+            "PhoneNumber": "5551212",
+            "PhoneExtension": null,
+            "phoneLocation": "Office",
+            "phoneType": "Voice"
+          }
+        ],
+        "SourceCode": [
+          {
+            "source": "Agency",
+            "sourceDescription": null,
+            "Value": "AGY_CON_001"
+          }
+        ],
+        "ContactId": "PS0",
+        "ContactRole": "Buyer"
+      }
+    ],
+    "SourceCodes": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "ADV_001"
+      }
+    ],
+    "DUNSNumber": 101010101
+  }
+]

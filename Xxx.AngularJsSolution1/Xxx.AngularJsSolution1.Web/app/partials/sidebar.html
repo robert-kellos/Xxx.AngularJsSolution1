@@ -1,0 +1,30 @@
+
+<div class="nav-wrapper">
+    <ul id="nav"
+    class="nav"
+    data-slim-scroll
+    data-collapse-nav
+    data-highlight-active >
+        <li class="nav-title"> <span>Navigation</span> </li>
+        <li><a md-button aria-label="meanu" href="#/"><i class="zmdi zmdi-home"></i><span>Dashboard</span> </a></li>
+        <li class="nav-divider"></li>
+        <li>
+            <a md-button aria-label="meanu" href="#" ng-click="requestNewOrder($event)">
+            <i class="zmdi zmdi-plus"></i><span>New Order</span> </a>
+        </li>
+        <li class="nav-divider"></li>
+        <li ng-controller="createOrderController as vm"><a md-button aria-label="meanu" href="#" ng-click="vm.searchOrders($event)"><i class="zmdi zmdi-search"></i><span>Search Orders</span> </a></li>
+        <li class="nav-divider"></li>
+        <li ng-controller="createOrderController as vm"><a md-button aria-label="meanu" href="#" ng-click="vm.openOrder($event)"><i class="zmdi zmdi-email-open"></i><span>Open Order</span> </a></li>
+        <li class="nav-divider"></li>
+        <li>
+            <a md-button aria-label="meanu" href="#"><i class="zmdi zmdi-card-giftcard"></i><span><span>Orders</span></span></a>
+            <ul>
+                <li><a md-button aria-label="meanu" href="#/createorder"><i class="fa fa-circle"></i><span>Create Order</span></a></li>
+                <li><a md-button aria-label="meanu" href="#/orders"><i class="fa fa-circle"></i><span>List Orders</span><span class="badge badge-info">3</span></a></li>
+            </ul>
+        </li>
+        
+        
+    </ul>
+</div>

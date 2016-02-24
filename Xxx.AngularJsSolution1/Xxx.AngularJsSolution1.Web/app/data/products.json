@@ -1,0 +1,62 @@
+﻿[
+  {
+    "ProductName": "Movies",
+    "SourceCode": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "WIDGET"
+      }
+    ]
+  },
+  {
+    "ProductName": "Cars",
+    "SourceCode": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "WIDGET"
+      }
+    ]
+  },
+  {
+    "ProductName": "Homes",
+    "SourceCode": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "WIDGET"
+      }
+    ]
+  },
+  {
+    "ProductName": "Movie Chairs",
+    "SourceCode": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "WIDGET"
+      }
+    ]
+  },
+  {
+    "ProductName": "Movie Wagons",
+    "SourceCode": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "WIDGET"
+      }
+    ]
+  },
+  {
+    "ProductName": "Movie Homes",
+    "SourceCode": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "WIDGET"
+      }
+    ]
+  }
+]

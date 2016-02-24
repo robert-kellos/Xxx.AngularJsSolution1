@@ -1,0 +1,55 @@
+﻿
+<div class="row" ng-cloak>
+    <div class="col-sm-4">
+        <md-autocomplete ng-disabled="isDisabled"
+                         md-selected-item="selectedItem"
+                         md-search-text="searchText"
+                         md-selected-item-change="onChangedAgencySelection(agency)"
+                         md-items="agency in searchAgencies(searchText)"
+                         md-item-text="agency.title"
+                         md-min-length="3"
+                         placeholder="Pick an agency"
+                         md-menu-class="autocomplete-custom-template"
+                         md-select-on-match="true" md-delay="500">
+
+            <md-item-template>
+                <span class="item-title">
+                    <span md-highlight-text="searchText" md-highlight-flags="^i">{{agency.title}}</span>
+                </span>
+            </md-item-template>
+
+            <md-not-found>
+                No agencies matching "{{searchText}}" were found.
+            </md-not-found>
+        </md-autocomplete>
+    </div>
+    <div class="col-sm-8">
+        <md-button class="md-primary md-raised" ng-click="showSpotBuyline($event, 1)">Show Buyline</md-button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 1</p></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 2</p></div>
+    <div class="clearfix visible-sm-block"></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 3</p></div>
+    <div class="clearfix visible-md-block"></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 4</p></div>
+    <div class="clearfix visible-sm-block"></div>
+    <div class="clearfix visible-lg-block"></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 5</p></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 6</p></div>
+    <div class="clearfix visible-sm-block"></div>
+    <div class="clearfix visible-md-block"></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 7</p></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 8</p></div>
+    <div class="clearfix visible-sm-block"></div>
+    <div class="clearfix visible-lg-block"></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 9</p></div>
+    <div class="clearfix visible-md-block"></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 10</p></div>
+    <div class="clearfix visible-sm-block"></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 11</p></div>
+    <div class="col-sm-6 col-md-4 col-lg-3 gridbox"><p>Box 12</p></div>
+</div>
+

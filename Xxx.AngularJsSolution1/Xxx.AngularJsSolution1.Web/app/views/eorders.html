@@ -1,0 +1,151 @@
+﻿<div class="page page-table">
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Search EOrders</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default table-dynamic">
+                <div class="table-filters">
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-6">
+                            <form>
+                                <input type="text"
+                                       placeholder="Search..."
+                                       class="form-control"
+                                       data-ng-model="searchKeywords"
+                                       data-ng-keyup="search()">
+                            </form>
+                        </div>
+                        <div class="col-sm-3 col-xs-6 filter-result-info">
+                            <span>
+                                Showing 10 / 300 entries
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="table table-bordered table-striped table-responsive">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="th">
+                                    Order ID
+                                    <span class="fa fa-angle-up"
+                                          data-ng-click=" sort('id') "
+                                          data-ng-class="{active: row == 'name'}"></span>
+                                    <span class="fa fa-angle-down"
+                                          data-ng-click=" order('-name') "
+                                          data-ng-class="{active: row == '-name'}"></span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="th">
+                                    EOrder Version
+                                    <span class="fa fa-angle-up"
+                                          data-ng-click=" sort('version') "
+                                          data-ng-class="{active: row == 'price'}"></span>
+                                    <span class="fa fa-angle-down"
+                                          data-ng-click=" order('-price') "
+                                          data-ng-class="{active: row == '-price'}"></span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="th">
+                                    EOrder Data
+                                    <span class="fa fa-angle-up"
+                                          data-ng-click=" sort('orderData') "
+                                          data-ng-class="{active: row == 'sales'}"></span>
+                                    <span class="fa fa-angle-down"
+                                          data-ng-click=" order('-sales') "
+                                          data-ng-class="{active: row == '-sales'}"></span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="eorder in eorders">
+                            <td>{{eorder.id}}</td>
+                            <td>{{eorder.version}}</td>
+                            <td>{{eorder.orderData}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <footer class="table-footer">
+                    <div ng-if="pagingInfo.showPager">
+                        <paging class="small"
+                                page="pagingInfo.page"
+                                page-size="pagingInfo.itemsPerPage"
+                                total="pagingInfo.totalItems"
+                                adjacent="{{adjacent}}"
+                                dots="{{dots}}"
+                                scroll-top="true"
+                                hide-if-empty="false"
+                                ul-class="{{ulClass}}"
+                                active-class="{{activeClass}}"
+                                disabled-class="{{disabledClass}}"
+                                show-prev-next="true"
+                                paging-action="selectPage(page)"
+                                ng-if="true">
+                        </paging>
+                    </div>
+                </footer>
+
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
+<!--
+
+<div class="page page-profile">
+    <div class="divider divider-lg"></div>
+
+    <div class="panel mini-box">
+        <div class="row">
+            <div class="col-md-2">
+                <a href="" ng-click="sort('id')">Order ID</a>
+            </div>
+            <div class="col-md-2">
+                <a href="" ng-click="sort('version')">Order Version</a>
+            </div>
+            <div class="col-md-8">
+                <a href="" ng-click="sort('orderData')">Order Data</a>
+            </div>
+        </div>
+
+        <div class="row" ng-repeat="order in orders">
+            <div class="col-md-2">
+                {{order.id}}
+            </div>
+            <div class="col-md-2">
+                {{order.version}}
+            </div>
+            <div class="col-md-8">
+                {{order.orderData}}
+            </div>
+        </div>
+
+        <div ng-if="pagingInfo.showPager">
+            <paging class="small"
+                    page="pagingInfo.page"
+                    page-size="pagingInfo.itemsPerPage"
+                    total="pagingInfo.totalItems"
+                    adjacent="{{adjacent}}"
+                    dots="{{dots}}"
+                    scroll-top="true"
+                    hide-if-empty="false"
+                    ul-class="{{ulClass}}"
+                    active-class="{{activeClass}}"
+                    disabled-class="{{disabledClass}}"
+                    show-prev-next="true"
+                    paging-action="selectPage(page)"
+                    ng-if="true">
+            </paging>
+        </div>
+    </div>
+</div>
+-->

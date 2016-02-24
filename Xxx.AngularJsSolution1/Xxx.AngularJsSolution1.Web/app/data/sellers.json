@@ -1,0 +1,60 @@
+﻿[
+  {
+    "Key": 1,
+    "Value": {
+      "DUNSNumber": "303030303",
+      "tradingPartnerId": "2F9C0543-71CC-41bc-B7C6-59CD4047C624",
+      "CompanyName": "KCBS-TV",
+      "Addresses": [
+        {
+          "AddressBlockLine": null,
+          "City": "Los Angeles",
+          "CountryCode": "USA",
+          "PostalCode": "91604-0000",
+          "RegionCode": "CA",
+          "Street1": "4200 Radford Avenue",
+          "Street2": null,
+          "Street3": null,
+          "AddressRole": "Business"
+        }
+      ],
+      "Contacts": [ ],
+      "SourceCodes": [
+        {
+          "source": "Agency",
+          "sourceDescription": null,
+          "Value": "AGY_STA_001"
+        }
+      ]
+    }
+  },
+  {
+    "Key": 1,
+    "Value": {
+      "DUNSNumber": "303030303",
+      "tradingPartnerId": "3F9C0543-71CC-41bc-B7C6-59CD4047C624",
+      "CompanyName": "WCBS-TV",
+      "Addresses": [
+        {
+          "AddressBlockLine": null,
+          "City": "New York",
+          "CountryCode": "USA",
+          "PostalCode": "10019-0000",
+          "RegionCode": "NY",
+          "Street1": "524 W. 57th Street",
+          "Street2": null,
+          "Street3": null,
+          "AddressRole": "Business"
+        }
+      ],
+      "Contacts": [],
+      "SourceCodes": [
+        {
+          "source": "Agency",
+          "sourceDescription": null,
+          "Value": "AGY_STA_002"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,80 @@
+﻿<md-dialog aria-label="Mango (Fruit)" ng-cloak>
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Create Order</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <i class="fa fa-remove"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <md-autocomplete ng-disabled="isDisabled"
+                                         md-selected-item="selectedItem"
+                                         md-search-text="searchText"
+                                         md-selected-item-change="onChangedAgencySelection(agency)"
+                                         md-items="agency in searchAgencies(searchText)"
+                                         md-item-text="agency.title"
+                                         md-min-length="3"
+                                         placeholder="Pick an agency"
+                                         md-menu-class="autocomplete-custom-template"
+                                         md-select-on-match="true" md-delay="500" style="z-index:99">
+
+                            <md-item-template>
+                                <span class="item-title">
+                                    <span md-highlight-text="searchText" md-highlight-flags="^i">{{agency.title}}</span>
+                                </span>
+                            </md-item-template>
+
+                            <md-not-found>
+                                No agencies matching "{{searchText}}" were found.
+                            </md-not-found>
+                        </md-autocomplete>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <input kendo-date-picker ng-model="startDate" class="data-entry-date" />
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <input kendo-date-picker ng-model="startDate" class="data-entry-date" />
+                    </div>
+                    <div class="clearfix visible-sm-block"></div>
+                    <div class="col-xs-12 col-sm-4">
+                        <md-input-container>
+                            <label># of Spot Buylines</label>
+                            <input ng-model="user.firstName">
+                        </md-input-container>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <md-input-container>
+                            <label># of Interactive Buylines</label>
+                            <input ng-model="user.firstName">
+                        </md-input-container>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <md-input-container>
+                            <label># of Non-airtime Buylines</label>
+                            <input ng-model="user.firstName">
+                        </md-input-container>
+                    </div>
+                    <div class="clearfix visible-sm-block"></div>
+                </div>
+            </div>
+            <md-button class="md-primary md-raised" ng-click="hide()">{{buyline.SpotBuylineType}}</md-button>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="answer('not useful')">
+            Not Useful
+        </md-button>
+        <md-button ng-click="answer('useful')" style="margin-right:20px;">
+            Useful
+        </md-button>
+    </md-dialog-actions>
+
+</md-dialog>

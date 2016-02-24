@@ -1,0 +1,333 @@
+﻿<!--begin init order content-->
+<section class="order-init-container page-form-ele page" ng-show="vm.newOrderConfig.isVisible">
+    <form data-toggle="validator" role="form" ng-submit="vm.onSubmitInitOrder($event)" name="orderInitForm">
+        <div class="row ui-section">
+            <section class="panel panel-default">
+                <div class="panel-body padding-lg-h ui-ribbon-container">
+                    <div class="ui-ribbon-wrapper">
+                        <div class="ui-ribbon">
+                            New Order
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12"><div class="order-init-label">Vendor</div></div>
+                    <div class="col-xs-12">
+                        <md-autocomplete flex ng-disabled="vm.isDisabled"
+                                         id="stationLookup"
+                                         md-selected-item="vm.newOrderConfig.selectedSeller"
+                                         md-search-text="vm.searchSellerText"
+                                         md-selected-item-change="vm.onChangedSellerSelection(seller)"
+                                         md-items="seller in vm.searchSellers(vm.searchSellerText)"
+                                         md-item-text="seller.Value.CompanyName"
+                                         md-min-length="3"
+                                         placeholder="Start typing seller/vendor name"
+                                         md-menu-class="autocomplete-custom-template"
+                                         md-select-on-match="true" md-delay="500" class="order-init-vendor">
+
+                            <md-item-template>
+                                <span class="item-title">
+                                    <span md-highlight-text="vm.searchSellerText" md-highlight-flags="^i">{{seller.Value.CompanyName}}</span>
+                                </span>
+                            </md-item-template>
+
+                            <md-not-found>
+                                No seller matching "{{vm.searchSellerText}}" were found.
+                            </md-not-found>
+                        </md-autocomplete>
+                    </div>
+
+                    <div class="col-xs-5">
+                        <div class="row">
+                            <div class="col-xs-12"><div class="order-init-label">Start Date</div></div>
+                            <div class="col-xs-12">
+                                <input ng-if="true" kendo-date-picker ng-model="vm.newOrderConfig.startDate" class="order-init-date" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="row">
+                            <div class="col-xs-12"><div class="order-init-label">End Date</div></div>
+                            <div class="col-xs-12">
+                                <input ng-if="true" kendo-date-picker ng-model="vm.newOrderConfig.endDate" class="order-init-date" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12"><div class="order-init-label-buyline">Broadcast Buylines (0 to {{vm.newOrderConfig.maxBuylineCount}})</div></div>
+                    <div class="col-xs-12">
+                        <md-whiteframe class="md-whiteframe-1dp order-init-white-frame">
+                            <input onClick="this.select();" type="number" min="0" max="{{vm.newOrderConfig.maxBuylineCount}}" maxlength="2" ng-model="vm.newOrderConfig.spotBuylines" placeholder="# of spot lines to start with: (up to {{vm.newOrderConfig.maxBuylineCount}})" />
+                        </md-whiteframe>
+                    </div>
+
+                    <div class="col-xs-12"><div class="order-init-label-buyline">Interactive Buylines (0 to {{vm.newOrderConfig.maxBuylineCount}})</div></div>
+                    <div class="col-xs-12">
+                        <md-whiteframe class="md-whiteframe-1dp order-init-white-frame">
+                            <input onClick="this.select();" type="number" min="0" max="{{vm.newOrderConfig.maxBuylineCount}}" maxlength="2" placeholder="# of interactive lines to start with: (up to {{vm.newOrderConfig.maxBuylineCount}})" />
+                        </md-whiteframe>
+                    </div>
+
+                    <div class="col-xs-12"><div class="order-init-label-buyline">Non-airtime Buylines (0 to {{vm.newOrderConfig.maxBuylineCount}})</div></div>
+                    <div class="col-xs-12">
+                        <md-whiteframe class="md-whiteframe-1dp order-init-white-frame">
+                            <input onClick="this.select();" type="number" min="0" max="{{vm.newOrderConfig.maxBuylineCount}}" maxlength="2" placeholder="# of non-airtime lines to start with: (up to {{vm.newOrderConfig.maxBuylineCount}})" />
+                        </md-whiteframe>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="order-init-submit-button">
+                            <md-button type="submit" class="md-raised btn-lg md-accent" ng-click="vm.onClickOkInitOrder"><i class="fa fa-check"></i><span>OK</span></md-button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </form>
+</section>
+<!--end init order content-->
+<!--begin main order content-->
+
+<div class="row fixedElement" ng-hide="vm.newOrderConfig.isVisible" style="padding-right:20px; padding-top:10px;">
+    <div class="col-sm-12">
+        <span class="pull-right">
+            <md-button aria-label="menu" class="md-fab md-warn" ng-click="vm.onClickSaveOrder($event)">
+                <i class="fa fa-save"></i>
+            </md-button>
+        </span>
+    </div>
+</div>
+
+<section class="order-container page-form-ele page" ng-hide="vm.newOrderConfig.isVisible">
+    <form data-toggle="validator" role="form" ng-submit="vm.onSubmitOrder($event)" name="orderForm">
+        <div class="row ui-section">
+
+            <section class="panel panel-default">
+                <div class="panel-body padding-lg-h ui-ribbon-container">
+                    <div class="ui-ribbon-wrapper" ng-show="false">
+                        <div class="ui-ribbon">
+                            New Order
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!--begin small device new row 1-->
+                        <!--begin large device new row 1-->
+                        <!--begin medium device new row 1-->
+                        <div class="col-xs-5 col-md-3 col-lg-2">
+                            <div class="row">
+                                <div class="col-xs-12"><div class="order-init-label">Start Date</div></div>
+                                <div class="col-xs-12">
+                                    <input ng-if="true" kendo-date-picker ng-model="vm.workingOrder.StartDate" class="order-data-entry-field" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-7 col-md-3 col-lg-2">
+                            <div class="row">
+                                <div class="col-xs-12"><div class="order-init-label">End Date</div></div>
+                                <div class="col-xs-12">
+                                    <input ng-if="true" kendo-date-picker ng-model="vm.workingOrder.EndDate" class="order-data-entry-field" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--begin small device new row 2-->
+                        <div class="col-xs-5  col-md-3 col-lg-2">
+                            <div class="row">
+                                <div class="col-xs-12"><div class="order-init-label">Order Type</div></div>
+                                <div class="col-xs-12">
+                                    <select kendo-drop-down-list ng-model="vm.workingOrder.TypeOfOrder" k-options="vm.lstOrderTypeOptions" class="order-data-entry-field"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-7  col-md-3 col-lg-2">
+                            <div class="row">
+                                <div class="col-xs-12"><div class="order-init-label">Cash/Trade</div></div>
+                                <div class="col-xs-12">
+                                    <select kendo-drop-down-list ng-model="vm.workingOrder.OrderCashTrade" k-options="vm.lstCashTradeOptions" class="order-data-entry-field"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--begin small device new row 3-->
+                        <!--begin medium device new row 2-->
+                        <div class="col-xs-5 col-md-3 col-lg-2">
+                            <div class="row">
+                                <div class="col-xs-12"><div class="order-init-label">Business Type</div></div>
+                                <div class="col-xs-12">
+                                    <select kendo-drop-down-list ng-model="vm.workingOrder.LocalNational" k-options="vm.lstBusinessTypeOptions" class="data-entry-dropdown-narrow"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-7 col-md-3 col-lg-2">
+                            <div class="row">
+                                <div class="col-xs-12"><div class="order-init-label">Product</div></div>
+                                <div class="col-xs-12 text-left">
+                                    <md-autocomplete flex ng-disabled="vm.isDisabled"
+                                                     id="productLookup"
+                                                     md-selected-item="vm.workingOrder.Product"
+                                                     md-search-text="vm.productSearchText"
+                                                     md-selected-item-change="vm.onChangedProductSelection(product)"
+                                                     md-items="product in vm.searchProducts(vm.productSearchText)"
+                                                     md-item-text="product.ProductName"
+                                                     md-min-length="3"
+                                                     placeholder="search by product name"
+                                                     md-menu-class="autocomplete-custom-template"
+                                                     md-select-on-match="true" md-delay="500" class="order-init-vendor">
+
+                                        <md-item-template>
+                                            <span class="item-title">
+                                                <span md-highlight-text="vm.productSearchText" md-highlight-flags="^i">{{product.ProductName}}</span>
+                                            </span>
+                                        </md-item-template>
+
+                                        <md-not-found>
+                                            No Products matching "{{vm.productSearchText}}" were found.
+                                        </md-not-found>
+                                    </md-autocomplete>
+                                </div>
+                            </div>
+                        </div>
+                        <!--begin small device new row 4-->
+                        <!--begin large device new row 2-->
+                        <div class="col-xs-12 col-lg-4">
+                            <div class="row">
+                                <div class="col-xs-12"><div class="order-init-label">Account Executive</div></div>
+                                <div class="col-xs-12">
+                                    <md-autocomplete flex ng-disabled="vm.isDisabled"
+                                                     id="aeLookup"
+                                                     md-selected-item="vm.primaryAe"
+                                                     md-search-text="vm.aeSearchText"
+                                                     md-selected-item-change="vm.onChangedAccountExecutiveSelection(ae)"
+                                                     md-items="ae in vm.searchAccountExecutives(vm.aeSearchText)"
+                                                     md-item-text="vm.formatName(ae)"
+                                                     md-autoselect="true"
+                                                     md-min-length="3"
+                                                     placeholder="search by account Executive last-name"
+                                                     md-menu-class="autocomplete-custom-template"
+                                                     md-select-on-match="true" 
+                                                     md-delay="500" 
+                                                     class="order-init-vendor">
+
+                                        <md-item-template>
+                                            <span class="item-title">
+                                                <span md-highlight-text="vm.aeSearchText" md-highlight-flags="^i">{{vm.formatName(ae) }}</span>
+                                            </span>
+                                        </md-item-template>
+
+                                        <md-not-found>
+                                            No Account executives matching "{{vm.aeSearchText}}" were found.
+                                        </md-not-found>
+                                    </md-autocomplete>
+                                </div>
+                                <div class="col-xs-12 order-lookup-info">
+                                    {{vm.primaryAeContactDetails}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-lg-4">
+                            <div class="row">
+                                <div class="col-xs-12"><div class="order-init-label">Advertiser</div></div>
+                                <div class="col-xs-12">
+                                    <md-autocomplete flex ng-disabled="vm.isDisabled" id="advertiserLookup"
+                                                     md-selected-item="vm.workingOrder.Advertiser"
+                                                     md-search-text="vm.advertiserSearchText"
+                                                     md-selected-item-change="vm.onChangedAdvertiserSelection(advertiser)"
+                                                     md-items="advertiser in vm.searchAdvertisers(vm.advertiserSearchText)"
+                                                     md-item-text="advertiser.CompanyName"
+                                                     md-min-length="3"
+                                                     placeholder="search by advertiser-name"
+                                                     md-menu-class="autocomplete-custom-template"
+                                                     md-select-on-match="true" md-delay="500" class="order-init-vendor">
+
+                                        <md-item-template>
+                                            <span class="item-title">
+                                                <span md-highlight-text="vm.advertiserSearchText" md-highlight-flags="^i">{{advertiser.CompanyName}}</span>
+                                            </span>
+                                        </md-item-template>
+
+                                        <md-not-found>
+                                            No advertisers matching "{{vm.advertiserSearchText}}" were found.
+                                        </md-not-found>
+                                    </md-autocomplete>
+                                </div>
+                                <div class="col-xs-12 order-lookup-info">
+                                    {{vm.advertiserAddress}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-lg-4">
+                            <div class="row">
+                                <div class="col-xs-12"><div class="order-init-label">Agency</div></div>
+                                <div class="col-xs-12">
+                                    <md-autocomplete flex ng-disabled="vm.isDisabled"
+                                                     id="agencyLookup"
+                                                     md-selected-item="vm.workingOrder.Agency"
+                                                     md-search-text="vm.agencySearchText"
+                                                     md-selected-item-change="vm.onChangedAgencySelection(agency)"
+                                                     md-items="agency in vm.searchAgencies(vm.agencySearchText)"
+                                                     md-item-text="agency.CompanyName"
+                                                     md-min-length="3"
+                                                     placeholder="search by agency-name"
+                                                     md-menu-class="autocomplete-custom-template"
+                                                     md-select-on-match="true" md-delay="500" class="order-init-vendor">
+
+                                        <md-item-template>
+                                            <span class="item-title">
+                                                <span md-highlight-text="vm.agencySearchText" md-highlight-flags="^i">{{agency.CompanyName}}</span>
+                                            </span>
+                                        </md-item-template>
+
+                                        <md-not-found>
+                                            No agencies matching "{{vm.agencySearchText}}" were found.
+                                        </md-not-found>
+                                    </md-autocomplete>
+                                </div>
+                                <div class="col-xs-12 order-lookup-info">
+                                    {{vm.agencyAddress}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="height:30px;">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div ui-grid="{ data: vm.orderModel.SpotBuylines }" class="buylineGrid"></div>
+                            <!--begin buyline tabs-->
+                            <div class="ui-tab-container ui-tab-horizontal">
+                                <uib-tabset justified="false" class="ui-tab">
+                                    <uib-tab heading="Spot Buylines">
+                                        <div class="panel panel-default">
+                                            <kendo-grid options="vm.spotBuylinesGridOptions"></kendo-grid>
+                                            <!--spot buyline edit window-->
+                                            <div kendo-window="vm.dialogs.spotBuylineEditor" k-visible="false" data-ng-include=" 'app/partials/lookups/product.html' " />
+                                            <!--spot buyline edit window-->
+                                        </div>
+                                    </uib-tab>
+                                    <uib-tab heading="Interactive Buylines">
+                                        <div class="panel panel-default">
+                                            <!--interactive buyline edit window-->
+                                            <kendo-grid options="vm.interactiveBuylinesGridOptions"></kendo-grid>
+                                            <!--interactive buyline edit window-->
+                                        </div>
+                                    </uib-tab>
+                                    <uib-tab heading="Non-Airtime Buylines">
+                                        <div class="panel panel-default">
+                                            <!--non-airtime buyline edit window-->
+                                            <kendo-grid options="vm.nonAirtimeBuylinesGridOptions"></kendo-grid>
+                                            <!--non-airtime buyline edit window-->
+                                        </div>
+                                    </uib-tab>
+                                </uib-tabset>
+                            </div>
+                            <!--end buyline tabs-->
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="order-init-submit-button">
+                            <md-button type="submit" class="md-raised btn-lg md-accent" ng-click="vm.onClickSaveOrder"><i class="fa fa-save"></i>&nbsp;<span>Save Order</span></md-button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </form>
+</section>
+<!--end main order content-->

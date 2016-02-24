@@ -1,0 +1,26 @@
+﻿[
+  {
+    "FCCCallLetters": "KCBS",
+    "SourceCode": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "KCBS"
+      }
+    ],
+    "stationId": null,
+    "tradingPartnerId": "2F9C0543-71CC-41bc-B7C6-59CD4047C624"
+  },
+  {
+    "FCCCallLetters": "WCBS",
+    "SourceCode": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "WCBS"
+      }
+    ],
+    "stationId": null,
+    "tradingPartnerId": "3F9C0543-71CC-41bc-B7C6-59CD4047C624"
+  }
+]

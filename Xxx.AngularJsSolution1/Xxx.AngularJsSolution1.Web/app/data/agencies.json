@@ -1,0 +1,299 @@
+﻿[
+  {
+    "Office": {
+      "OfficeName": "New York Sales",
+      "Phone": [
+        {
+          "CountryAccessCode": "1",
+          "AreaCityCode": "212",
+          "PhoneNumber": "5551000",
+          "PhoneExtension": null,
+          "phoneLocation": "Office",
+          "phoneType": "Voice"
+        }
+      ],
+      "Addresses": [
+        {
+          "AddressBlockLine": null,
+          "City": "New York",
+          "CountryCode": "USA",
+          "PostalCode": "10174-1801",
+          "RegionCode": "NY",
+          "Street1": "405 Lexington Ave 18th Fl",
+          "Street2": null,
+          "Street3": null,
+          "AddressRole": "Billing"
+        }
+      ],
+      "SourceCode": [
+        {
+          "source": "Agency",
+          "sourceDescription": null,
+          "Value": "AGY_OFF_001"
+        }
+      ],
+      "LocationCode": "101"
+    },
+    "TradingPartnerId": null,
+    "CompanyName": "AAAA Advertising Agency, Inc.",
+    "Addresses": [
+      {
+        "AddressBlockLine": null,
+        "City": "New York",
+        "CountryCode": "USA",
+        "PostalCode": "10174-1801",
+        "RegionCode": "NY",
+        "Street1": "405 Lexington Ave 18th Fl",
+        "Street2": null,
+        "Street3": null,
+        "AddressRole": "Business"
+      }
+    ],
+    "Contacts": [
+      {
+        "PersonPrefix": "Ms.",
+        "PersonFirstName": "Jane",
+        "PersonMiddleInitial": null,
+        "PersonLastName": "Doe",
+        "PersonSuffix": null,
+        "PersonTitle": "Buyer",
+        "Email": [
+          "jdoe@aaaa.org"
+        ],
+        "Phone": [
+          {
+            "CountryAccessCode": "1",
+            "AreaCityCode": "212",
+            "PhoneNumber": "5551212",
+            "PhoneExtension": "333",
+            "phoneLocation": "Office",
+            "phoneType": "Voice"
+          },
+          {
+            "CountryAccessCode": "1",
+            "AreaCityCode": "212",
+            "PhoneNumber": "5551213",
+            "PhoneExtension": null,
+            "phoneLocation": "Office",
+            "phoneType": "Fax"
+          }
+        ],
+        "SourceCode": [
+          {
+            "source": "Agency",
+            "sourceDescription": null,
+            "Value": "AGY_CON_002"
+          }
+        ],
+        "ContactId": "PS1",
+        "ContactRole": "Buyer"
+      }
+    ],
+    "SourceCodes": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "AGY_AGY_001"
+      }
+    ],
+    "DUNSNumber": 202020202
+  },
+  {
+    "Office": {
+      "OfficeName": "Direct Client Sales",
+      "Phone": [
+        {
+          "CountryAccessCode": "1",
+          "AreaCityCode": "212",
+          "PhoneNumber": "5551000",
+          "PhoneExtension": null,
+          "phoneLocation": "Office",
+          "phoneType": "Voice"
+        }
+      ],
+      "Addresses": [
+        {
+          "AddressBlockLine": null,
+          "City": "New York",
+          "CountryCode": "USA",
+          "PostalCode": "10174-1801",
+          "RegionCode": "NY",
+          "Street1": "405 Lexington Ave 18th Fl",
+          "Street2": null,
+          "Street3": null,
+          "AddressRole": "Business"
+        }
+      ],
+      "SourceCode": [
+        {
+          "source": "Agency",
+          "sourceDescription": null,
+          "Value": "AGY_OFF_001"
+        }
+      ],
+      "LocationCode": "101"
+    },
+    "TradingPartnerId": null,
+    "CompanyName": "AAAA Advertising Agency, Inc.",
+    "Addresses": [
+      {
+        "AddressBlockLine": null,
+        "City": "New York",
+        "CountryCode": "USA",
+        "PostalCode": "10174-1801",
+        "RegionCode": "NY",
+        "Street1": "405 Lexington Ave 18th Fl",
+        "Street2": null,
+        "Street3": null,
+        "AddressRole": "Billing"
+      }
+    ],
+    "Contacts": [
+      {
+        "PersonPrefix": "Ms.",
+        "PersonFirstName": "Jane",
+        "PersonMiddleInitial": null,
+        "PersonLastName": "Doe",
+        "PersonSuffix": null,
+        "PersonTitle": "Buyer",
+        "Email": [
+          "jdoe@aaaa.org"
+        ],
+        "Phone": [
+          {
+            "CountryAccessCode": "1",
+            "AreaCityCode": "212",
+            "PhoneNumber": "5551212",
+            "PhoneExtension": "333",
+            "phoneLocation": "Office",
+            "phoneType": "Voice"
+          },
+          {
+            "CountryAccessCode": "1",
+            "AreaCityCode": "212",
+            "PhoneNumber": "5551213",
+            "PhoneExtension": null,
+            "phoneLocation": "Office",
+            "phoneType": "Fax"
+          }
+        ],
+        "SourceCode": [
+          {
+            "source": "Agency",
+            "sourceDescription": null,
+            "Value": "AGY_CON_002"
+          }
+        ],
+        "ContactId": "PS1",
+        "ContactRole": "Buyer"
+      }
+    ],
+    "SourceCodes": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "AGY_AGY_001"
+      }
+    ],
+    "DUNSNumber": 202020202
+  },
+  {
+    "Office": {
+      "OfficeName": "Media Direct",
+      "Phone": [
+        {
+          "CountryAccessCode": "1",
+          "AreaCityCode": "212",
+          "PhoneNumber": "5551000",
+          "PhoneExtension": null,
+          "phoneLocation": "Office",
+          "phoneType": "Voice"
+        }
+      ],
+      "Addresses": [
+        {
+          "AddressBlockLine": null,
+          "City": "New York",
+          "CountryCode": "USA",
+          "PostalCode": "10174-1801",
+          "RegionCode": "NY",
+          "Street1": "405 Lexington Ave 18th Fl",
+          "Street2": null,
+          "Street3": null,
+          "AddressRole": "Billing"
+        }
+      ],
+      "SourceCode": [
+        {
+          "source": "Agency",
+          "sourceDescription": null,
+          "Value": "AGY_OFF_001"
+        }
+      ],
+      "LocationCode": "101"
+    },
+    "TradingPartnerId": null,
+    "CompanyName": "Direct Client Sales, Inc.",
+    "Addresses": [
+      {
+        "AddressBlockLine": null,
+        "City": "New York",
+        "CountryCode": "USA",
+        "PostalCode": "10174-1801",
+        "RegionCode": "NY",
+        "Street1": "405 Lexington Ave 18th Fl",
+        "Street2": null,
+        "Street3": null,
+        "AddressRole": "Business"
+      }
+    ],
+    "Contacts": [
+      {
+        "PersonPrefix": "Ms.",
+        "PersonFirstName": "Jane",
+        "PersonMiddleInitial": null,
+        "PersonLastName": "Doe",
+        "PersonSuffix": null,
+        "PersonTitle": "Buyer",
+        "Email": [
+          "jdoe@aaaa.org"
+        ],
+        "Phone": [
+          {
+            "CountryAccessCode": "1",
+            "AreaCityCode": "212",
+            "PhoneNumber": "5551212",
+            "PhoneExtension": "333",
+            "phoneLocation": "Office",
+            "phoneType": "Voice"
+          },
+          {
+            "CountryAccessCode": "1",
+            "AreaCityCode": "212",
+            "PhoneNumber": "5551213",
+            "PhoneExtension": null,
+            "phoneLocation": "Office",
+            "phoneType": "Fax"
+          }
+        ],
+        "SourceCode": [
+          {
+            "source": "Agency",
+            "sourceDescription": null,
+            "Value": "AGY_CON_002"
+          }
+        ],
+        "ContactId": "PS1",
+        "ContactRole": "Buyer"
+      }
+    ],
+    "SourceCodes": [
+      {
+        "source": "Agency",
+        "sourceDescription": null,
+        "Value": "AGY_AGY_001"
+      }
+    ],
+    "DUNSNumber": 202020202
+  }
+]

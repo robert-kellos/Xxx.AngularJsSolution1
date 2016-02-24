@@ -1,0 +1,115 @@
+﻿<div class="page page-profile">
+    <div class="divider divider-lg"></div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="panel mini-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-danger">
+                    <i class="fa fa-keyboard-o"></i>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2">{{vm.dashboard.totalOrders}}</p>
+                    <p class="text-muted">Orders</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel mini-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-info">
+                    <i class="fa fa-check"></i>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2">{{vm.dashboard.submittedOrders}}</p>
+                    <p class="text-muted">Submitted</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel mini-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-warning">
+                    <i class="fa fa-bookmark"></i>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2">{{vm.dashboard.pendingOrders}}</p>
+                    <p class="text-muted">Pending Submit</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel mini-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt bg-success">
+                    <i class="fa fa-dollar"></i>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2">{{vm.dashboard.totalRevenue}}</p>
+                    <p class="text-muted">Total Revenue</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="divider divider-lg"></div>
+    <div class="row ui-section">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table no-margin">
+                        <thead>
+                            <tr>
+                                <th>Order #</th>
+                                <th>Station</th>
+                                <th>Status</th>
+                                <th>Account Executive</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><span class="color-success"><i class="fa fa-level-up"></i></span>KILT-FM</td>
+                                <td><span class="label label-info">Pending</span></td>
+                                <td>Amery Lee</td>
+                                <td><uib-progressbar class="progressbar-xs no-margin" value="55"></uib-progressbar></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><span class="color-success"><i class="fa fa-level-up"></i></span>WKRP-FM</td>
+                                <td><span class="label label-primary">Due</span></td>
+                                <td>Romayne Carlyn</td>
+                                <td><uib-progressbar class="progressbar-xs no-margin" value="34" type="success"></uib-progressbar></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><span class="color-warning"><i class="fa fa-level-down"></i></span>KCBS-FM</td>
+                                <td><span class="label label-success">Due</span></td>
+                                <td>Marybeth Joanna</td>
+                                <td><uib-progressbar class="progressbar-xs no-margin" value="68" type="info"></uib-progressbar></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><span class="color-info"><i class="fa fa-level-up"></i></span>KCBS-FM</td>
+                                <td><span class="label label-danger">Blocked</span></td>
+                                <td>Jonah Benny</td>
+                                <td><uib-progressbar class="progressbar-xs no-margin" value="52" type="warning"></uib-progressbar></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><span class="color-danger"><i class="fa fa-level-down"></i></span>WCBS-FM</td>
+                                <td><span class="label label-warning">Suspended</span></td>
+                                <td>Daly Royle</td>
+                                <td><uib-progressbar class="progressbar-xs no-margin" value="77" type="danger"></uib-progressbar></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><span class="color-info"><i class="fa fa-level-down"></i></span>WUPA-TV</td>
+                                <td><span class="label label-info">Suspended</span></td>
+                                <td>Jane Swift</td>
+                                <td><uib-progressbar class="progressbar-xs no-margin" value="55" type="success"></uib-progressbar></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

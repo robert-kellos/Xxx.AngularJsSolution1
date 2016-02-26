@@ -57,9 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\..\AppData\Local\Temp\suehsobx.1go\VersionInfo.cs">
-      <Link>Properties\VersionInfo.cs</Link>
-    </Compile>
     <Compile Include="Log4NetExtensions.cs" />
     <Compile Include="LoggingInterceptor.cs" />
     <Compile Include="LogLevelEnum.cs" />

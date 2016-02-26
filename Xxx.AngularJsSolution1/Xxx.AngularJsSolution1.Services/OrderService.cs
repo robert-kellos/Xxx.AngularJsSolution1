@@ -48,6 +48,16 @@ namespace Xxx.AngularJsSolution1.Services
             return await repository.CreateOrderAsync(order);
         }
 
+        public async Task<int> UpdateOrder(Order order)
+        {
+            return await repository.UpdateOrder(order);
+        }
+
+        public async Task<int> DeleteOrder(int id)
+        {
+            return await repository.DeleteOrder(id);
+        }
+
         #endregion
     }
 }

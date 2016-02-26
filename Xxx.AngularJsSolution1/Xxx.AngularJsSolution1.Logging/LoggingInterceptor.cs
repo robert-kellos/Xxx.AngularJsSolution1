@@ -1,4 +1,5 @@
 ﻿using log4net;
+using log4net.Config;
 using Ninject.Extensions.Interception;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,29 @@ namespace Xxx.AngularJsSolution1.Logging
 {
     public class LoggingInterceptor : IInterceptor
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        /// <summary>
+        /// The _log
+        /// </summary>
+        private static ILog _log;
+
+        /// <summary>
+        ///     Gets the log.
+        /// </summary>
+        /// <value>
+        ///     The log.
+        /// </value>
+        public static ILog Log
+        {
+            get
+            {
+                if (_log != null) return _log;
+
+                XmlConfigurator.Configure();
+                _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+                return _log;
+            }
+        }
 
         public void Intercept(IInvocation invocation)
         {

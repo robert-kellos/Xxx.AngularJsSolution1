@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Dynamic;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Xxx.AngularJsSolution1.WebApi.Controllers
@@ -35,6 +36,42 @@ namespace Xxx.AngularJsSolution1.WebApi.Controllers
 
         #region Public Methods
 
+        [Route("nextOrderSet", Name = "NextOrderRoute")]
+        [HttpPost]
+        public IHttpActionResult AddNextTestOrderSet()
+        {
+            CreateOrders();
+
+            return Ok();
+        }
+
+        [Route("newOrder", Name = "NewOrderRoute")]
+        [HttpPost]
+        public IHttpActionResult NewOrderRoute(Order order)
+        {
+            service.CreateOrder(order);
+
+            return Ok(order);
+        }
+
+        [Route("updateOrder", Name = "UpdateOrderRoute")]
+        [HttpPut]
+        public IHttpActionResult UpdateOrder(Order order)
+        {
+            service.UpdateOrder(order);
+
+            return Ok(order);
+        }
+
+        [Route("deleteOrder", Name = "DeleteOrderRoute")]
+        [HttpDelete]
+        public IHttpActionResult DeleteOrder(int id)
+        {
+            service.DeleteOrder(id);
+
+            return Ok();
+        }
+
         /// <summary>
         /// Gets the active orders.
         /// </summary>
@@ -51,6 +88,7 @@ namespace Xxx.AngularJsSolution1.WebApi.Controllers
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent));
 
             AppendPaginationDataToHeader(query, page, pageSize);
+
             return Ok(GetRequestedPage(query, page, pageSize, sortBy, reverse));
         }
 
@@ -62,7 +100,8 @@ namespace Xxx.AngularJsSolution1.WebApi.Controllers
             {
                 string orderXml = string.Format(baseXml, i.ToString(), "KYW-TV", (i + baseOrderValue));
                 Order order = new Order() { OrderData = orderXml, Version = 1 };
-                await service.CreateOrder(order);
+                
+                await service.CreateOrder(order).ConfigureAwait(true);
             }
         }
 

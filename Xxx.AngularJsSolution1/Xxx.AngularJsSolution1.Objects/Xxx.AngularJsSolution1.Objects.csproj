@@ -45,9 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\..\AppData\Local\Temp\gdzqrcgu.cl3\VersionInfo.cs">
-      <Link>Properties\VersionInfo.cs</Link>
-    </Compile>
     <Compile Include="Domain\Enums\SampleEnum.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,12 +10,11 @@ namespace Xxx.AngularJsSolution1.Repository
     public interface IOrderRepository
     {
         IQueryable<Order> GetActiveOrders();
-        Task<int> CreateOrderAsync(Order order);
-    }
 
-    //public interface IOrderRepository
-    //{
-    //    IQueryable<Order> GetActiveOrders();
-    //    Task<int> CreateOrderAsync(Order order);
-    //}
+        Task<int> CreateOrderAsync(Order order);
+
+        Task<int> UpdateOrder(Order order);
+
+        Task<int> DeleteOrder(int id);
+    }
 }

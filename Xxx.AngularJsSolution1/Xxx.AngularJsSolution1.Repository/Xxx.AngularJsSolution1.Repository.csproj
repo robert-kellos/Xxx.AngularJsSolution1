@@ -58,9 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\..\AppData\Local\Temp\n500olkb.la2\VersionInfo.cs">
-      <Link>Properties\VersionInfo.cs</Link>
-    </Compile>
     <Compile Include="DefaultRepository.cs" />
     <Compile Include="IDefaultRepository.cs" />
     <Compile Include="IOrderRepository.cs" />

@@ -65,10 +65,12 @@ namespace Repository.Pattern.Ef6
 
         public virtual void Insert(TEntity entity)
         {
-            //entity.ObjectState = ObjectState.Added; 
-            (_context as DbContext).Entry(entity).State = EntityState.Added;
-            _dbSet.Attach(entity);
-            //_context.SyncObjectState(entity);
+            //(_context as DbContext).Entry(entity).State = EntityState.Added;
+            //_dbSet.Attach(entity);
+
+            Attach(entity, EntityState.Added);
+
+            var result = _context.SaveChanges() == 1;
         }
 
         public virtual void InsertRange(IEnumerable<TEntity> entities)
@@ -79,15 +81,17 @@ namespace Repository.Pattern.Ef6
             }
         }
 
-        public virtual void InsertGraphRange(IEnumerable<TEntity> entities)
-        {
-            _dbSet.AddRange(entities);
-        }
+        //public virtual void InsertGraphRange(IEnumerable<TEntity> entities)
+        //{
+        //    _dbSet.AddRange(entities);
+        //}
 
         public virtual void Update(TEntity entity)
         {
             //_dbSet.Attach(entity);
             Attach(entity, EntityState.Modified);
+
+            var result = _context.SaveChanges() == 1;
         }
 
         public virtual void Delete(object id)
@@ -98,8 +102,14 @@ namespace Repository.Pattern.Ef6
 
         public virtual void Delete(TEntity entity)
         {
-            (_context as DbContext).Entry(entity).State = EntityState.Modified;
-            _dbSet.Attach(entity);
+            //(_context as DbContext).Entry(entity).State = EntityState.Modified;
+            //_dbSet.Attach(entity);
+
+            Attach(entity, EntityState.Modified);
+
+            var result = _context.SaveChanges() == 1;
+            
+            LoggingInterceptor.Log.Debug($"Item deleted: {result}");
         }
 
         public IQueryFluent<TEntity> Query()
@@ -150,11 +160,15 @@ namespace Repository.Pattern.Ef6
             {
                 return false;
             }
-            
-            (_context as DbContext).Entry(entity).State = EntityState.Deleted;
-            _dbSet.Attach(entity);
 
-            return true;
+            //(_context as DbContext).Entry(entity).State = EntityState.Deleted;
+            //_dbSet.Attach(entity);
+
+            Attach(entity, EntityState.Deleted);
+
+            var result = await _context.SaveChangesAsync(CancellationToken.None).ConfigureAwait(true) == 1;
+
+            return result;
         }
 
         internal IQueryable<TEntity> Select(
@@ -182,6 +196,9 @@ namespace Repository.Pattern.Ef6
             {
                 query = query.Skip((page.Value - 1) * pageSize.Value).Take(pageSize.Value);
             }
+
+            LoggingInterceptor.Log.Debug($"Query :: Total count: {query.Count()}");
+
             return query;
         }
 
@@ -211,7 +228,6 @@ namespace Repository.Pattern.Ef6
                 var local = dbContext.Set<TEntity>()
                          .Local
                          .AsParallel()
-                         //.FirstOrDefault(f => (((IEntity<long>)f).Id == ((IEntity<long>)entity).Id));
                          .FirstOrDefault(f => f.Id == entity.Id);
 
                 if (local != null)
@@ -222,9 +238,9 @@ namespace Repository.Pattern.Ef6
                 dbContext.Entry(entity).State = entityState;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //
+                LoggingInterceptor.Log.Debug(ex);
             }
         }
     }

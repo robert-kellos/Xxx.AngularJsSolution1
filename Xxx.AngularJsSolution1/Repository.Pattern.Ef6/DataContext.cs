@@ -78,7 +78,7 @@ namespace Repository.Pattern.Ef6
         ///     objects written to the underlying database.</returns>
         public override async Task<int> SaveChangesAsync()
         {
-            return await this.SaveChangesAsync(CancellationToken.None);
+            return await base.SaveChangesAsync(CancellationToken.None).ConfigureAwait(true);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Repository.Pattern.Ef6
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
         {
             //SyncObjectsStatePreCommit();
-            var changesAsync = await base.SaveChangesAsync(cancellationToken);
+            var changesAsync = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(true);
             //SyncObjectsStatePostCommit();
             return changesAsync;
         }

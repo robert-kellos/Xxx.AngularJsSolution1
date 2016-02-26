@@ -238,9 +238,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\..\AppData\Local\Temp\1sdq0dbb.jfu\VersionInfo.cs">
-      <Link>Properties\VersionInfo.cs</Link>
-    </Compile>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="SwaggerConfig.cs" />
     <Compile Include="NinjectDependencyResolver.cs" />

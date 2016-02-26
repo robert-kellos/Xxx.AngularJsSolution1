@@ -63,9 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\..\AppData\Local\Temp\f4vtqb2x.nfe\VersionInfo.cs">
-      <Link>Properties\VersionInfo.cs</Link>
-    </Compile>
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Mapping\OrderMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

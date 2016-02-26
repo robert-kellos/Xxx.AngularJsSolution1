@@ -23,19 +23,4 @@ namespace Xxx.AngularJsSolution1.Repository
 
         }
     }
-
-    //public class DefaultRepository : IDefaultRepository
-    //{
-    //    private readonly IUnitOfWorkAsync unitOfWorkAsync;
-    //    public DefaultRepository(IUnitOfWorkAsync unitOfWorkAsync)
-    //    {
-    //        this.unitOfWorkAsync = new UnitOfWork(new SimpleOrderEntryContext());
-    //    }
-
-    //    public IUnitOfWorkAsync UnitOfWorkAsync
-    //    {
-    //        get { return unitOfWorkAsync; }
-
-    //    }
-    //}
 }

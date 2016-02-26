@@ -97,14 +97,17 @@ namespace Repository.Pattern.Ef6
             return RepositoryAsync<TEntity>();
         }
 
-        public Task<int> SaveChangesAsync()
+        public async Task<int> SaveChangesAsync()
         {
-            return _dataContext.SaveChangesAsync();
+            var result = 0;
+            await Task.Factory.StartNew(() => { result = _dataContext.SaveChanges(); }).ConfigureAwait(true);
+            return result;
         }
 
-        public Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        public async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
         {
-            return _dataContext.SaveChangesAsync(cancellationToken);
+            var result = await _dataContext.SaveChangesAsync(cancellationToken).ConfigureAwait(true);
+            return result;
         }
 
         public IRepositoryAsync<TEntity> RepositoryAsync<TEntity>() where TEntity : class, IEntity<long>

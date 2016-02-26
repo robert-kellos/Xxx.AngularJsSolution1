@@ -7,7 +7,7 @@ using Xxx.AngularJsSolution1.Objects.Entities;
 using Repository.Pattern.UnitOfWork;
 using System.Threading;
 using System.Diagnostics;
-using Cbs.AngularJsSolution1.Logging;
+using Xxx.AngularJsSolution1.Logging;
 
 namespace Xxx.AngularJsSolution1.Repository
 {

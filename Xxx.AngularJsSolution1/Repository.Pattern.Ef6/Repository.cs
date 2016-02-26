@@ -15,6 +15,7 @@ using Repository.Pattern.DataContext;
 using Repository.Pattern.Infrastructure;
 using Repository.Pattern.Repositories;
 using Repository.Pattern.UnitOfWork;
+using Xxx.AngularJsSolution1.Logging;
 
 #endregion
 
